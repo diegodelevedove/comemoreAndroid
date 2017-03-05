@@ -4,18 +4,18 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class ClienteActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_cliente);
     }
 
-    public void abrirCliente(View view) {
-        Intent cliente = new Intent(this,ClienteActivity.class);
-        startActivity(cliente);
+    public void voltarMenu(View view) {
+        Intent menu = new Intent(this,MainActivity.class);
+        startActivity(menu);
     }
+
 }
