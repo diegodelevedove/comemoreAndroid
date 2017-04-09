@@ -54,8 +54,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
+
+     <!-- Conteúdo -->
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -87,7 +89,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Endereço:"
+                android:text="Endereço da Entrega:"
                 android:textColor="#FFFF"
                 />
             <EditText
@@ -113,10 +115,24 @@
                 android:id="@+id/email"
                 />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Data da Entrega:"
+                android:textColor="#FFFF"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="datetime"
+                android:textSize="20dp"
+                android:textColor="#FF0000"
+                />
+
 
 
 
 
         </LinearLayout>
- </ScrollView>
+    </ScrollView>
 </RelativeLayout>
