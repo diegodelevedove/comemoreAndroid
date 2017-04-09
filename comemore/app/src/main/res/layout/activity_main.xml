@@ -9,107 +9,90 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#66C6E9"
+    android:background="#6bbed7"
     tools:context="comemore.sistema.comemore.MainActivity">
 
-    //Daqui pra baixo pode ser alterado
+
+    <!--- Imagens no fundo obdecem a ordem hierarquica portanto imagem vem antes do conteudo -->
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/img03"
-        android:id="@+id/imageView"
+        android:id="@+id/imageView2"
         android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/img03"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/imageView3"
+        android:adjustViewBounds="false" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/img01"
+        android:id="@+id/imageView4"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/img03"
-        android:id="@+id/imageView"
-        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/img02"
+        android:id="@+id/imageView5"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/img02"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/imageView2" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/img01"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/imageView3" />
+    <!--- daqui pra baixo contéudo -->
 
-    //Aqui começa o bicho pegar
 
-    //Botões
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Faça um Pedido pelo Aplicativo"
+            android:textSize="25dp"
+            android:textAlignment="center"
+            android:textColor="#FFFF"
+            android:textStyle="bold"
+            android:layout_margin="50dp"
+            android:layout_marginTop="50dp"
+            />
+
         <Button
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="Cliente"
-        android:background="#FF6585"
-        android:layout_gravity="center"
-        android:onClick="abrirCliente(MainActivity)"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Cadastrar Pedido"
+            android:textColor="#6bbed7"
+            android:background="#f7cb06"
+            android:textStyle="bold"
+            android:textSize="30dp"
 
-
-        android:id="@+id/button"
-        android:layout_below="@+id/imageView"
-        android:layout_alignLeft="@+id/tema"
-        android:layout_alignStart="@+id/tema"
-        android:layout_marginTop="11dp" />
-
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:background="#FF6585"
-        android:layout_gravity="center"
-        android:text="Tema"
-        android:id="@+id/tema"
-
-        android:layout_below="@+id/button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp" />
-
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:background="#FF6585"
-        android:layout_gravity="center"
-        android:text="Funcionário"
-        android:id="@+id/funcionario"
-        android:layout_below="@+id/tema"
-        android:layout_alignLeft="@+id/tema"
-        android:layout_alignStart="@+id/tema"
-        android:layout_marginTop="20dp" />
-
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:background="#FF6585"
-        android:layout_gravity="center"
-        android:text="Pedido"
-        android:id="@+id/pedido"
-        android:layout_marginTop="10dp"
-         />
+            android:onClick="pedido"
+            />
 
 
     </LinearLayout>
 
-</RelativeLayout>
 
+
+
+
+</RelativeLayout>
