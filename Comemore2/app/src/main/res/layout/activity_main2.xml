@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#6bbed7"
+    tools:context="android.estudo.comemore2.Main2Activity">
+
+
+    <!--- Imagens no fundo obdecem a ordem hierarquica portanto imagem vem antes do conteudo -->
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/img03"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/imageView4" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/img01"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/imageView6" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/img02"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/imageView7" />
+
+    <!--- DAQUI PRA BAIXO O CONTEÚDO DA PÁGINA -->
+
+
+
+    <!-- ************************************* -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Conteúdo -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nome:"
+                android:textColor="#FFFF"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Digite seu nome"
+                android:id="@+id/nome"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CPF:"
+                android:textColor="#FFFF"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Digite seu CPF"
+                android:id="@+id/cpf"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Endereço da Entrega:"
+                android:textColor="#FFFF"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Digite seu Endereço"
+                android:id="@+id/endereco"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="E-mail:"
+                android:textColor="#FFFF"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Digite seu Email"
+                android:id="@+id/email"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Observações do Pedido:"
+                android:textColor="#FFFF"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textLongMessage"
+                android:hint="Observações do seu pedido"
+                android:id="@+id/obspedido"
+                />
+
+
+         <!-- BOTÕES -->
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#6bbed7"
+                android:background="#f7cb06"
+                android:text="Data da Entrega"
+                android:id="@+id/dataEntrega"
+                android:onClick="dataPicker"
+
+                />
+
+
+            <Button
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#6bbed7"
+                android:background="#f7cb06"
+                android:text="Horario da Entrega"
+                android:id="@+id/horaEntrega"/>
+
+
+            <Button
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#6bbed7"
+                android:background="#f7cb06"
+                android:text="Escolher Tema"
+                android:id="@+id/tema"
+                android:onClick="telatema"/>
+
+            <Button
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#f7cb06"
+                android:background="#f2467a"
+                android:text="Salvar"
+                android:onClick="salvar"/>
+
+
+            <Button
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#f7cb06"
+                android:background="#f2467a"
+                android:text="Cancelar"
+                android:onClick="cancelar"/>
+
+            <Button
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#f7cb06"
+                android:background="#f2467a"
+                android:text="Voltar Ao Menu"
+                android:onClick="telahome"/>
+
+
+                                <!-- FIM DA TELA -->
+
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
