@@ -122,6 +122,21 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Telefone:"
+                android:textColor="#FFFF"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Digite seu Telefone"
+                android:id="@+id/telefone"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Observações do Pedido:"
                 android:textColor="#FFFF"/>
 
