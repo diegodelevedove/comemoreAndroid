@@ -158,8 +158,17 @@
                 android:textColor="#6bbed7"
                 android:background="#f7cb06"
                 android:text="Data da Entrega"
-                android:id="@+id/dataEntrega"
-                android:onClick="dataPicker"
+                android:id="@+id/iddataPedido"
+                android:onClick="datapedido"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Saída da Data"
+                android:id="@+id/dataver"
+                android:textAlignment="center"
 
                 />
 
@@ -170,8 +179,10 @@
                 android:layout_height="match_parent"
                 android:textColor="#6bbed7"
                 android:background="#f7cb06"
-                android:text="Horario da Entrega"
-                android:id="@+id/horaEntrega"/>
+                android:text="Horário da Entrega"
+                android:id="@+id/idhoraEntrega"
+                android:onClick="horaEntrega"
+                />
 
 
             <Button
