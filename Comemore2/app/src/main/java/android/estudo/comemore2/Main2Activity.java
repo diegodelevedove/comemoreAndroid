@@ -7,7 +7,9 @@
 
 package android.estudo.comemore2;
 
+import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.icu.text.DateFormat;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -31,6 +33,7 @@ import android.view.View;
 
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import static android.icu.util.Calendar.getInstance;
@@ -41,13 +44,14 @@ public class Main2Activity extends AppCompatActivity {
 
     private EditText nome, cpf, endereco, email, telefone, obspedido; //Ver como é a saida do datapicker e do horario
 
+    //Aqui vem o set da data
 
+    DateFormat formatDateTime = DateFormat.getDateTimeInstance();
+    Calendar dateTime = getInstance();
+    private TextView text;
+    private Button btn_time;
+    private Button btn_date;
 
-
-    private DatePicker datePicker;
-    private Calendar calendar;
-    private TextView dateView;
-    private int year, month, day;
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -60,72 +64,68 @@ public class Main2Activity extends AppCompatActivity {
         // CAlENDARIO
         /************************************************************************************************/
 
-        //Associando os Botões
+        text = (TextView) findViewById(R.id.dataver);
+        btn_date = (Button) findViewById(R.id.btn_date);
+        btn_time = (Button) findViewById(R.id.btn_time);
 
-        dateView = (TextView) findViewById(R.id.dataver);
-        calendar = getInstance();
-        year = calendar.get(Calendar.YEAR);
-        month = calendar.get(Calendar.MONTH);
-        day = calendar.get(Calendar.DAY_OF_MONTH);
-        showDate(year, month+1, day);
+        btn_date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                updateDate();
+            }
+        });
 
-
-
-
-
-
-
-
-
-
-
+        btn_time.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                updateTime();
+            }
+        });
 
 
-
-
-
-
-
+        updateTextLabel();
 
     }//Fim do ONCREATE
 
-
-
-    @SuppressWarnings("deprecation")
-    public void setDate(View viewdata) {
-        showDialog(999);
-        Toast.makeText(getApplicationContext(), "ca",
-                Toast.LENGTH_SHORT)
-                .show();
+    private void updateDate(){
+        new DatePickerDialog(this,date,dateTime.get(Calendar.YEAR),dateTime.get(Calendar.MONTH),dateTime.get(Calendar.DAY_OF_MONTH)).show();
     }
 
-    @Override
-    protected Dialog onCreateDialog(int id) {
-        // TODO Auto-generated method stub
-        if (id == 999) {
-            return new DatePickerDialog(this,
-                    myDateListener, year, month, day);
+    private void updateTime(){
+        new TimePickerDialog(this,time,dateTime.get(Calendar.HOUR_OF_DAY),dateTime.get(Calendar.MINUTE),true).show();
+    }
+
+    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                dateTime.set(Calendar.YEAR,year);
+                dateTime.set(Calendar.MONTH,month);
+                dateTime.set(Calendar.DAY_OF_MONTH,dayOfMonth);
+                updateTextLabel();
         }
-        return null;
-    }
+    };
 
-    private DatePickerDialog.OnDateSetListener myDateListener = new
-            DatePickerDialog.OnDateSetListener() {
-                @Override
-                public void onDateSet(DatePicker arg0,
-                                      int arg1, int arg2, int arg3) {
-                    // TODO Auto-generated method stub
-                    // arg1 = year
-                    // arg2 = month
-                    // arg3 = day
-                    showDate(arg1, arg2+1, arg3);
-                }
-            };
+    TimePickerDialog.OnTimeSetListener time = new TimePickerDialog.OnTimeSetListener(){
+        @Override
+        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+            dateTime.set(Calendar.HOUR_OF_DAY, hourOfDay);
+            dateTime.set(Calendar.MINUTE, minute);
+            updateTextLabel();
+        }
 
-    private void showDate(int year, int month, int day) {
-        dateView.setText(new StringBuilder().append(day).append("/")
-                .append(month).append("/").append(year));
-    }
+
+    };
+
+
+
+
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+        private void updateTextLabel(){
+        text.setText(formatDateTime.format(dateTime.getTime()));
+        }
+
+
 
 
 
@@ -139,14 +139,14 @@ public class Main2Activity extends AppCompatActivity {
     // CHAMANDO TELA HOME
 
 
-    public void telahome(View view2) {
+    public void telahome(View view) {
         Intent telahome = new Intent(this, MainActivity.class);
         startActivity(telahome);
     }
 
     // CHAMANDO TELA TEMA
 
-    public void telatema(View view3) {
+    public void telatema(View view) {
         Intent telatema = new Intent(this, Main3Activity.class);
         startActivity(telatema);
     }

@@ -10,9 +10,13 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="#6bbed7"
+
     tools:context="android.estudo.comemore2.Main3Activity">
 
     <!-- Imagens de Fundo -->
+
+
+
 
     <ImageView
         android:layout_width="wrap_content"
@@ -20,7 +24,8 @@
         app:srcCompat="@drawable/img01"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -49,6 +54,27 @@
         android:layout_alignParentEnd="true"
         android:id="@+id/imageView20" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/menino"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="telameninos"
+
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/meninas"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="telameninas" />
+
+
+
+
 
     <Button
         android:layout_width="match_parent"
@@ -63,21 +89,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/menino"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="telameninos" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/meninas"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="telameninas" />
+
 
     <TextView
         android:layout_width="match_parent"
@@ -92,5 +105,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
          />
+
+
 
 </RelativeLayout>
